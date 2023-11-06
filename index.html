@@ -191,6 +191,13 @@ initTE({ Carousel });
   margin-top: 10vh;
   height: 100vh;
 }
+@media (max-width:500px) {
+  .gallery {
+  background: #EEE;
+  margin-top: 10vh;
+  height: 50vh;
+} 
+}
 
 .gallery-cell1 {
   width: 66%;
@@ -389,7 +396,9 @@ initTE({ Carousel });
   <link rel="stylesheet" href="assets/css/templatemo-digimedia-v3.css">
   <link rel="stylesheet" href="assets/css/animated.css">
   <link rel="stylesheet" href="assets/css/owl.css">
-
+<!-- Start of HubSpot Embed Code -->
+<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/44325191.js"></script>
+<!-- End of HubSpot Embed Code -->
 </head>
 <body>
     
@@ -475,6 +484,7 @@ initTE({ Carousel });
   </a>
   <!-- Pop Up Button End -->
   <!-- Pop Up Start -->
+  
   <div id="popupform">
     <div class="popupformhead">
 
@@ -487,18 +497,28 @@ initTE({ Carousel });
       <input class="popupforminput" type="text" id="name" placeholder="Name"><br>
       <input class="popupforminput" type="number" id="number" placeholder="Number"><br>
       <input class="popupforminput" type="email" name="email" id="email" placeholder="Email"><br>
-      <select class="popupforminput" name="interested" id="interested in">
+      <select class="popupforminput" name="interested" id="interested_in">
         <option value="Interested In">Interested In</option>
         <option value="2BHK" style="color: black;">2BHK</option>
         <option value="3BHK" style="color: black;">3BHK</option>
       </select>
       <center>
-        <a href="mailto:marketing@vindhyarealty.com">
-          <input type="submit" name="submit" class="popupformsubmit">
-        </a>
+        
+        <!-- <a href="mailto:marketing@vindhyarealty.com"> -->
+          <input type="submit" name="submit" class="popupformsubmit" onclick="sendmail1()">
+        <!-- </a> -->
       </center>
     </div>
   </div>
+  <script>
+    function sendmail1() {
+      var name = document.getElementById("name").value;
+      var email = document.getElementById("email").value;
+      var number = document.getElementById("number").value;
+      var message = document.getElementById("interested_in").value;
+      window.location.href = "mailto:marketing@vindhyarealty.com?subject=" + number.replace(/ /g, "%20") + "&body=" + name.replace(/ /g, "%20") + "%3A%20%0D%0A" + message.replace(/ /g, "%20") + "%3A%20%0D%0A" + number.replace(/ /g, "%20") + "%3A%20%0D%0A" + message.replace(/ /g, "%20") + "%3A%20";
+    }
+  </script>
   <!-- POP UP SCRIPT START -->
   <script>
     $(document).ready(function () {
@@ -544,6 +564,7 @@ initTE({ Carousel });
       });
     }
   </script>
+  
 <!-- POP UP SCRIPT END -->
 <!-- POP UP END -->
 
@@ -933,10 +954,10 @@ initTE({ Carousel });
     <div class="container">
       <div class="row">
         <div class="col-lg-12">
-          <div class="section-heading  wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.5s">
-            <!-- <h6 style="color: #026ec1;">Project Details</h6>
-            <h4>What <em style="color: #026ec1;">Vidhya Primrose</em> Provides</h4> -->
-            <!-- <div class="line-dec" style="background-color: #026ec1;"></div> -->
+          <div class="left-content  wow fadeInLeft" data-wow-duration="1s" data-wow-delay="0.5s">
+            <!-- <h6 style="color: #026ec1;">Project Details</h6> -->
+            <h2>PLANS </h2>
+            <div class="line-dec" style="background-color: #026ec1;"></div>
           </div>
         </div>
         <div class="col-lg-12">
@@ -1072,7 +1093,7 @@ initTE({ Carousel });
     <div class="container">
       <div class="row">
         <div class="col-lg-12">
-          <div class="section-heading  wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.5s">
+          <div class="left-content  wow fadeInLeft" data-wow-duration="1s" data-wow-delay="0.5s" >
             <h1 style=" font-size: 48px; font-weight: bolder;">Construction Status</h1>
             <!-- <h4>What <em style="color: #026ec1;">Vidhya Primrose</em> Provides</h4> -->
             <div class="line-dec" style="background-color: #026ec1;"></div>
@@ -1278,7 +1299,7 @@ initTE({ Carousel });
                     </div>
                     <div class="col-lg-12">
                       <fieldset>
-                        <button type="submit" id="form-submit" class="main-button " onclick="sendmail();">Send Message
+                        <button type="submit" id="form-submit" class="main-button " >Send Message
                           Now</button>
                       </fieldset>
                     </div>
@@ -1289,8 +1310,7 @@ initTE({ Carousel });
                         var subject = document.getElementById("subject").value;
                         var message = document.getElementById("message").value;
                         window.location.href = "mailto:marketing@vindhyarealty.com?subject=" + subject.replace(/ /g, "%20") + "&body=" + name.replace(/ /g, "%20") + "%3A%20%0D%0A" + email.replace(/ /g, "%20") + "%3A%20%0D%0A" + subject.replace(/ /g, "%20") + "%3A%20%0D%0A" + message.replace(/ /g, "%20") + "%3A%20";
-                        window.location.href = "homepage_3.html";
-                      }
+q                      }
                     </script>
                   </div>
                 </div>
@@ -1447,6 +1467,6 @@ margin:0% 3%;
   <script src="assets/js/animation.js"></script>
   <script src="assets/js/imagesloaded.js"></script>
   <script src="assets/js/custom.js"></script>
-
+  
 </body>
 </html>
